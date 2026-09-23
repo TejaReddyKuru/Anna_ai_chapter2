@@ -28,3 +28,5 @@ async def ready() -> JSONResponse:
     except Exception as exc:
         logger.warning("Readiness probe failed: {error}", error=exc)
         return JSONResponse(status_code=503, content={"status": "not_ready", "database": "unavailable"})
+
+

@@ -1,0 +1,49 @@
+> 中文版本请参阅 [README.zh-CN.md](README.zh-CN.md)
+
+# Anna Executa Plugin Examples
+
+This repository provides **complete examples and development documentation** for Anna Executa plugins, covering Python, Node.js, and Go, with both Local and Binary distribution methods.
+
+## What is Executa?
+
+Executa is the plugin extension system for Anna Agent. Developers can write tools in **any programming language** — as long as they implement the standard **JSON-RPC 2.0 over stdio** protocol, Anna will automatically discover, load, and expose them to the LLM.
+
+## Directory Structure
+
+```
+anna-executa-examples/
+├── examples/
+│   ├── python/                          # Python plugin examples (each in its own subdir)
+│   │   ├── basic-tool/                  # Basic plugin (text processing)
+│   │   ├── credential-tool/             # Credential plugin (Weather API Key)
+│   │   ├── google-oauth-tool/           # Google OAuth plugin (Gmail)
+│   │   ├── sampling-summarizer/         # Sampling plugin v2 (reverse sampling/createMessage)
+│   │   ├── storage-notebook/            # Persistent Storage plugin v2 (reverse storage/* + files/*)
+│   │   └── build_binary.sh              # Builds all examples (or one) via PyInstaller
+│   ├── nodejs/                          # Node.js plugin examples
+│   │   ├── example_plugin.js            # Basic plugin (JSON/Base64/Hash)
+│   │   ├── credential_plugin.js         # Credential plugin (GitHub API Key)
+│   │   ├── google_oauth_plugin.js       # Google OAuth plugin (Calendar)
+│   │   ├── sampling-tool.js             # Sampling plugin v2
+│   │   └── build_binary.sh
+│   ├── go/                              # Go plugin examples
+│   │   ├── main.go                      # Basic plugin (system info / hash)
+│   │   ├── credential_plugin.go         # Credential plugin (Notion API Key)
+│   │   ├── google_oauth_plugin.go       # Google OAuth plugin (Drive)
+│   │   ├── sampling-tool/               # Sampling plugin v2 (separate go.mod)
+│   │   ├── build.sh
+│   │   └── Makefile
+│   ├── multifile-binary/                # Multi-file Binary distribution examples
+│   │   └── python-pyinstaller-onedir/   # PyInstaller --onedir + manifest.json
+│   └── anna-app-focus-flow/             # ⭐ Complete Anna App — UI bundle + skill + tool plugin
+│                                        #     The tool plugin ships in three flavours:
+│                                        #     focus-session-{python,node,go}; pick one via
+│                                        #     `executa.json` or `--executa` CLI flag.
+│   └── anna-app-visual-brand/           # ⭐ Anna App — host LLM image generate/edit + APS persistence
+│   └── anna-app-session-demo/           # ⭐ Anna App — agent.session workspace best practices
+│                                        #     (fixed-client affinity, absolute paths, nonce-verified writes)
+│   └── anna-app-mobile-demo/            # ⭐ Anna App — anna.mobile.* native bridge (share/haptics/camera),
+│                                        #     dual mobile_entry + desktop degradation + dev.mocks
+├── sdk/                                 # Reference SDKs used by the sampling examples
+│   ├── python/                          # executa_sdk
+│   ├── no

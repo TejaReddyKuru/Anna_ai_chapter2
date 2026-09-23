@@ -144,4 +144,3 @@ class AHNAResponseOut(BaseModel):
     watch_conditions: Optional[List[str]] = None
     trade_plan: Optional[AHNATradePlan] = None
     ui_effect: Optional[AHNAUIEffect] = None
-

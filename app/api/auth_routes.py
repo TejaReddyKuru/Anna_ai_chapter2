@@ -123,7 +123,6 @@ class TokenSuccess(BaseModel):
     expires_in: int
     refresh_expires_in: int
 
-
 class UserOut(BaseModel):
     id: str
     email: str

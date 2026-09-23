@@ -3,7 +3,6 @@
 Revision ID: 0008_phase2_community
 Revises: 0007_phase2_agents_alerts_notifications
 Create Date: 2024-01-01 00:00:00.000000
-
 """
 from alembic import op
 import sqlalchemy as sa
